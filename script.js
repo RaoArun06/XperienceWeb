@@ -39,7 +39,7 @@ function loadanimation(){
         display:"none"
     })
     t1.from("#hero1 h1,#hero2 h1,#hero3 h2,#hero4 h1 ",{
-        y:120,
+        y:150,
         stagger:0.2
     })
     t1.from("#nav",{
@@ -50,7 +50,8 @@ function cursoranimation(){
     document.addEventListener("mousemove",function(dets){
         gsap.to("#cursor",{
             left:dets.x,
-            top:dets.y
+            top:dets.y,     
+            duration: 0
         })
     })
     Shery.makeMagnet("#nav-part2 h4");
