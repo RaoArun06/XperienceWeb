@@ -86,6 +86,7 @@ body{
     width: 100%;
     background-color: #151515;
 }
+
 #page1 #nav{
     display: flex;
     align-items: center;
@@ -105,7 +106,7 @@ body{
 .hero{
     width: 72%;
     margin-left: 27%;
-    overflow: hidden;
+    
     display: flex;
     align-items: center;
     position: relative;
@@ -119,6 +120,16 @@ body{
     font-weight: 600;
     text-transform: uppercase;
     line-height: 7.2vw;
+    position: relative;
+}
+#hero1 h1::before{
+    content: "01";
+    position: absolute;
+    font-size: 3vw;
+    font-weight: 100;
+    font-family: "silk serif";
+    left: -18%;
+    top:-19%;
 }
 .hero h2:hover{
     -webkit-text-stroke: 2px #fff;
@@ -191,9 +202,19 @@ body{
     margin-left: 28%;  /*check for later */
     background-color: #0575c6;
 }
+#page4-content h1::before{
+    content: "03";
+    position: absolute;
+    font-size: 3vw;
+    font-weight: 100;
+    font-family: "silk serif";
+    left: -12%;
+    top:9%;
+}
 #page4-content h1{
     font-size: 7vw;
     text-transform: uppercase;
+    position: relative;
 }
 #page4-content .underline{
     height: 1px;
@@ -241,4 +262,112 @@ body{
 #blue-div-elem p{
     width: 40%;
     font-size: 0.7vw;
+}
+#page5{
+    min-height:100vh ;
+    width: 100%;
+    position: relative;
+}
+.elem{
+    white-space: nowrap;
+}
+.elem h1{
+    font-size: 7vw;
+    -webkit-text-stroke: 1px #fff;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: transparent;
+    display: inline-block;
+    margin-right: 16px;
+    margin-bottom: -2vh;
+    transform: translate(calc(-100%-20px));
+    animation-name: animee;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+@keyframes animee {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(calc(-100% - 20px));
+    }
+}
+.elem2{ 
+    white-space: nowrap;
+    
+}
+.elem2 h1{
+    margin-bottom: -2vh;
+    font-size: 7vw;
+    -webkit-text-stroke: 1px #fff;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: transparent;
+    display: inline-block;
+    margin-right: 16px;
+    transform: translate(calc(-100%-20px));
+    animation-name: animee;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+}
+#page5 span{
+    font-style: italic;
+    font-family: "silk serif";
+    color: transparent;
+}
+#footer{
+    height: 90vh;
+    width: 100%;
+    position: relative;
+    padding-left:28vw;
+    padding-right: 2vw;
+}
+#footer h1{
+    font-size: 7vw;
+    text-transform: uppercase;
+    position: relative;
+}
+#footer h1::before{
+    content: "04";
+    position: absolute;
+    font-size: 3vw;
+    font-weight: 100;
+    font-family: "silk serif";
+    left: -12%;
+    top:9%;
+}
+.underline{
+    height: 1px;
+    width: 100%;
+    margin: 3vw 0;
+    background-color: #fff;
+}
+#footer-div{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-right: 15vw;
+    padding-top: 4vw;
+    margin-bottom: 6vw;
+}
+#footer-div h6{
+    font-size: 0.9vw;
+    margin-bottom: 1.5vw;
+    font-weight: 500;
+}
+.box{
+    width: 20%;
+}
+#footer-div h5{
+    font-size: 1.4vw;
+    font-weight: 500 ;
+
+}
+#footer>h5{
+    font-weight: 500;
+    font-size: 1vw;
 }
