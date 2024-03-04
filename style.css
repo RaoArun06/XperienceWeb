@@ -8,7 +8,7 @@
 html, body{
     width: 100%;
     height: 100%;
-    cursor: none;
+    /* cursor: none; */
 }
 body{
     overflow-x: hidden;
@@ -19,7 +19,7 @@ body{
     border-radius: 50%;
     border: 2px solid #ffffffc6;
     position: fixed;
-    z-index: 999;
+    z-index: 1;
     mix-blend-mode: difference;
     transform: translate(-50%,-50%);
 }
@@ -104,32 +104,45 @@ body{
     font-weight: 500;
 }
 .hero{
-    width: 72%;
+    width: 100%;
     margin-left: 27%;
-    
+    overflow-y: hidden;
     display: flex;
     align-items: center;
     position: relative;
     z-index: 9999;
-}
+}     
 .hero:nth-child(2){
     margin-top: 18vh; 
 }
-.hero h1 , .hero h2{
+.hero h1{
     font-size: 7.2vw;
     font-weight: 600;
     text-transform: uppercase;
     line-height: 7.2vw;
     position: relative;
 }
-#hero1 h1::before{
+#hero1{
+    margin-left: 0;
+    padding-left: 27%;
+}
+#hero1::before{
     content: "01";
     position: absolute;
     font-size: 3vw;
     font-weight: 100;
     font-family: "silk serif";
-    left: -18%;
-    top:-19%;
+    left: 20%;
+    top: 2%;
+}
+.hero h2{
+    font-size: 7.2vw;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 7.2vw;
+    border-bottom: 0.5vw solid #fff;
+    padding-bottom: 0.8vw;
+    /* transition: all ease 0.3s; */
 }
 .hero h2:hover{
     -webkit-text-stroke: 2px #fff;
@@ -137,11 +150,7 @@ body{
     font-weight: 500;
     border-bottom: 0.5vw solid #ffffff00;
 }   
-.hero h2{
-    border-bottom: 0.5vw solid #fff;
-    padding-bottom: 0.8vw;
-    /* transition: all ease 0.3s; */
-}
+
 #page2{
     height: 100vh;
     width: 100%;
@@ -185,13 +194,128 @@ body{
 #page3{
     min-height: 100vh;
     width: 100%;
-    background-color: rgb(209, 13, 13);
     position: relative;
+    padding: 7vh 2vw;
+    margin-bottom: 20vh;
+}
+#page3 h1{
+    font-size: 7vw;
+    text-transform: uppercase;
+    position: relative;
+    margin-left: 28vw;
+}
+#page3  h1::before{
+    content: "02";
+    position: absolute;
+    font-size: 3vw;
+    font-weight: 100;
+    font-family: "silk serif";
+    left: -12%;
+    top:9%;
+}
+#page3 .underline{
+    margin-left: 28vw;
+}
+#image-div-container{
+    padding: 1vw;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+#image-div{
+    height: 38vw;
+    width: 27vw;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    margin:2vw;
+
+}
+#image-div img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+#image-div:nth-child(1){
+    height: 29vh;
+    width: 27vw;
+}
+.page3-circle1{
+    height: 23vw;
+    width:23vw;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 23vh;
+    margin-left: 10vh;
+    position: relative;
+}
+.page3-circle1 svg{
+    height: 30%;
+}
+.page3-circle2{
+    height: 23vw;
+    width:23vw;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* margin-top: 23vh;
+    margin-left: 10vh; */
+}
+.page3-circle2 svg{
+    height: 30%;
+    rotate: -45deg;
+}
+.circle-in{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    background-color: #fff;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    scale: 0;
+    transition: all ease 0.5s;
+}
+.circle-in p{
+    font-size: 0.95vw;
+    color: #000;
+    font-weight: 500;
+    width: 60%;
+    scale:0;
+    transition: all ease 0.5s;
+    transition-delay: 0.3s;
+    opacity: 0;
+}
+.page3-circle1:hover .circle-in{
+    scale:1;
+}
+.page3-circle1:hover p{
+    scale:1;
+    opacity: 1;
+}
+.page3-circle2:hover .circle-in{
+    scale:1;
+}
+.page3-circle2:hover p{
+    scale:1;
+    opacity: 1;
 }
 #page4{
     min-height: 100vh;
     width: 100%;
-    background-color: rgb(11, 154, 159);
     position: relative;
     padding: 7vh 0;
     
@@ -200,7 +324,6 @@ body{
     width: 72vw;
     position: relative;
     margin-left: 28%;  /*check for later */
-    background-color: #0575c6;
 }
 #page4-content h1::before{
     content: "03";
@@ -370,4 +493,8 @@ body{
 #footer>h5{
     font-weight: 500;
     font-size: 1vw;
+}
+._canvas_container{
+    z-index:999999 !important;
+    pointer-events: none;
 }
